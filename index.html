@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilata Wodisha - Web and Mobile App Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Bilata Wodisha</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="highlight">Bilata Wodisha</span></h1>
+                    <h2 class="hero-subtitle">Web and Mobile App Developer</h2>
+                    <p class="hero-description">
+                        Passionate Front-End Web and Flutter Mobile App Developer creating innovative digital solutions 
+                        with modern technologies and clean, user-friendly designs.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/billataWo/addislancers_app" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bilata-wodisha-3b5a37143/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:12mastwal@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="profile.png" alt="Bilata Wodisha" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>I'm a passionate developer from Ethiopia</h3>
+                    <p>
+                        Currently pursuing my Bachelor's in Computer Science at HiLCoE School of Technology, 
+                        I specialize in creating engaging web applications with React and mobile apps with Flutter. 
+                        My expertise in React ecosystem allows me to build scalable, maintainable applications.
+                    </p>
+                    <p>
+                        I'm passionate about modern React patterns including hooks, context API, and state management 
+                        with Redux. I believe in writing clean, efficient code and creating user experiences that make 
+                        a difference. When I'm not coding, you'll find me exploring new React features or 
+                        working on projects that challenge my development skills.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>5+</h4>
+                            <p>Technologies</p>
+                        </div>
+                        <div class="stat">
+                            <h4>2+</h4>
+                            <p>Years Learning</p>
+                        </div>
+                        <div class="stat">
+                            <h4>1</h4>
+                            <p>Major Project</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <h4>Name</h4>
+                            <p>Bilata Wodisha</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Addis Ababa, Ethiopia</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Education</h4>
+                            <p>HiLCoE School of Technology</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar"></i>
+                        <div>
+                            <h4>Expected Graduation</h4>
+                            <p>2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend Web Development</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Vue.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fab fa-react"></i> React Ecosystem</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">React Hooks</span>
+                        <span class="skill-tag">React Router</span>
+                        <span class="skill-tag">Redux</span>
+                        <span class="skill-tag">Context API</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">React Testing Library</span>
+                        <span class="skill-tag">JSX</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-palette"></i> CSS Frameworks & Styling</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Sass/SCSS</span>
+                        <span class="skill-tag">CSS Grid</span>
+                        <span class="skill-tag">Flexbox</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Android Studio</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Development Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Webpack</span>
+                        <span class="skill-tag">npm/yarn</span>
+                        <span class="skill-tag">Chrome DevTools</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Backend & Database</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">JSON</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-pencil-ruler"></i> Design & UI/UX</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Addislancer.png" alt="Freelancing Mobile App">
+                       <!-- <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Freelancing+App" alt="Freelancing Mobile App">-->
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/billataWo/addislancers_app" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Freelancing Mobile Application</h3>
+                        <p>A fully functional mobile app built with Flutter and Firebase featuring user authentication, job posting, listings, application system, and real-time messaging.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Dart</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/61dafb/ffffff?text=React+Task+Manager" alt="React Task Management Application">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/billataWo/task-manager-app" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="task-manager.html" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>React Task Management App</h3>
+                        <p>A professional task management application built with React featuring Context API, custom hooks, real-time state management, advanced filtering, and enterprise-level patterns.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">React Hooks</span>
+                            <span class="tech-tag">Context API</span>
+                            <span class="tech-tag">useReducer</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <!--<img src="https://via.placeholder.com/400x250/f093fb/ffffff?text=Portfolio+Website" alt="Portfolio Website">-->
+                       
+                        <img src="PersonalPortifoilo.png" alt="Portfolio Website">
+                         <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A modern, responsive portfolio website showcasing my skills, projects, and experience. Built with clean HTML, CSS, and JavaScript.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/000000/ffffff?text=Next.js+App" alt="Next.js E-commerce Project">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Next.js E-commerce Platform</h3>
+                        <p>A full-stack e-commerce platform built with Next.js featuring server-side rendering, payment integration, admin dashboard, and optimal SEO performance.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>
+                        I'm always interested in new opportunities and exciting projects. 
+                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:12mastwal@gmail.com">12mastwal@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+251799007486">+251 799 007 486</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Addis Ababa, Ethiopia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Bilata Wodisha. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/billataWo/addislancers_app" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/bilata-wodisha-3b5a37143/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:12mastwal@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-new.js"></script>
+</body>
+</html>
