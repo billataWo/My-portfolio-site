@@ -1,17 +1,25 @@
-console.log('Portfolio script starting...');
+
 
 // Simple theme manager
 let currentTheme = 'light';
 
+// Page loader
+window.addEventListener('load', function() {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            // Initialize animations after loader
+            setTimeout(initScrollAnimations, 200);
+        }, 800);
+    }
+});
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing theme system...');
-    
     const themeToggle = document.getElementById('themeToggle');
-    console.log('Theme toggle found:', !!themeToggle);
     
     if (!themeToggle) {
-        console.error('Theme toggle button not found!');
         return;
     }
     
@@ -21,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add click event
     themeToggle.addEventListener('click', function() {
-        console.log('Theme toggle clicked!');
         toggleTheme();
     });
     
@@ -30,19 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize mobile menu
     initMobileMenu();
-    
-    console.log('Theme system initialized successfully');
 });
 
 function toggleTheme() {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    console.log('Switching from', currentTheme, 'to', newTheme);
     setTheme(newTheme);
 }
 
 function setTheme(theme) {
-    console.log('Setting theme to:', theme);
-    
     document.documentElement.setAttribute('data-theme', theme);
     currentTheme = theme;
     
@@ -63,20 +65,21 @@ function setTheme(theme) {
             }
         }
     }
-    
-    console.log('Theme set to:', theme);
 }
 
 function initScrollAnimations() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                // Add staggered delay for multiple elements
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
             }
         });
     }, observerOptions);
@@ -85,6 +88,29 @@ function initScrollAnimations() {
     document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
         observer.observe(el);
     });
+
+    // Add subtle parallax effect to hero section (respecting motion preferences)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
+    if (!prefersReducedMotion.matches) {
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+    }
 }
 
 function initMobileMenu() {
@@ -92,9 +118,21 @@ function initMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     
     if (hamburger && navMenu) {
+        let isMenuOpen = false;
+        
         hamburger.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Update ARIA attributes for accessibility
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            navMenu.setAttribute('aria-hidden', !isMenuOpen);
+            
+            // Manage focus for accessibility
+            if (isMenuOpen) {
+                navMenu.querySelector('.nav-link').focus();
+            }
         });
         
         // Close menu when clicking on nav links
@@ -102,7 +140,22 @@ function initMobileMenu() {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', false);
+                navMenu.setAttribute('aria-hidden', true);
+                isMenuOpen = false;
             });
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', false);
+                navMenu.setAttribute('aria-hidden', true);
+                hamburger.focus();
+                isMenuOpen = false;
+            }
         });
     }
 }
@@ -123,4 +176,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-console.log('Portfolio script loaded successfully!'); 

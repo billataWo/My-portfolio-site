@@ -3,84 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilata Wodisha - Web and Mobile App Developer</title>
+    <meta name="description" content="Bilata Wodisha - Professional Web and Mobile App Developer specializing in React, Flutter, and modern web technologies. Computer Science student at HiLCoE School of Technology.">
+    <meta name="keywords" content="Web Developer, Mobile App Developer, React, Flutter, JavaScript, Frontend Developer, Computer Science, Ethiopia">
+    <meta name="author" content="Bilata Wodisha">
+    <meta property="og:title" content="Bilata Wodisha - Web and Mobile App Developer">
+    <meta property="og:description" content="Professional Web and Mobile App Developer specializing in React, Flutter, and modern web technologies.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <title>Bilata Wodisha - Professional Web & Mobile App Developer | React & Flutter Expert</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-spinner" role="progressbar" aria-label="Loading content"></div>
+            <div class="loader-text">Loading Portfolio...</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Bilata Wodisha</h2>
+                <a href="#home" aria-label="Go to homepage">
+                    <h1>Bilata Wodisha</h1>
+                </a>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="#home" class="nav-link" role="menuitem">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                <li class="nav-item" role="none">
+                    <a href="#about" class="nav-link" role="menuitem">About</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
+                <li class="nav-item" role="none">
+                    <a href="#skills" class="nav-link" role="menuitem">Skills</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
+                <li class="nav-item" role="none">
+                    <a href="#projects" class="nav-link" role="menuitem">Projects</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                <li class="nav-item" role="none">
+                    <a href="#contact" class="nav-link" role="menuitem">Contact</a>
                 </li>
             </ul>
             <div class="nav-controls">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" type="button">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hi, I'm <span class="highlight">Bilata Wodisha</span></h1>
-                    <h2 class="hero-subtitle">Web and Mobile App Developer</h2>
-                    <p class="hero-description">
-                        Passionate Front-End Web and Flutter Mobile App Developer creating innovative digital solutions 
-                        with modern technologies and clean, user-friendly designs.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    <main>
+        <section id="home" class="hero" aria-label="Introduction">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>Hello, I'm <span class="highlight">Bilata Wodisha</span></h2>
+                        <p class="hero-subtitle">Professional Web & Mobile App Developer</p>
+                        <p class="hero-description">
+                            Computer Science student specializing in React and Flutter development. 
+                            I create innovative digital solutions with modern technologies and 
+                            user-centered design principles.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary" role="button">View My Work</a>
+                            <a href="#contact" class="btn btn-secondary" role="button">Get In Touch</a>
+                        </div>
+                        <div class="hero-social" role="list" aria-label="Social media links">
+                            <a href="https://github.com/billataWo/addislancers_app" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/bilata-wodisha-3b5a37143/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:12mastwal@gmail.com" aria-label="Send Email">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="hero-social">
-                        <a href="https://github.com/billataWo/addislancers_app" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/bilata-wodisha-3b5a37143/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:12mastwal@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="Images/profile.png" alt="Bilata Wodisha" class="profile-img">
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="Images/profile.png" alt="Professional headshot of Bilata Wodisha" class="profile-img" loading="eager">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title fade-in">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text slide-in-left">
                     <h3>I'm a passionate developer from Ethiopia</h3>
                     <p>
                         Currently pursuing my Bachelor's in Computer Science at HiLCoE School of Technology, 
@@ -108,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-info">
+                <div class="about-info slide-in-right">
                     <div class="info-item">
                         <i class="fas fa-user"></i>
                         <div>
@@ -145,7 +176,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <h2 class="section-title fade-in">Skills & Technologies</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> Frontend Web Development</h3>
@@ -231,12 +262,11 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title fade-in">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="Images/Addislancer.png" alt="Freelancing Mobile App">
-                       <!-- <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Freelancing+App" alt="Freelancing Mobile App">-->
+                        <img src="Images/addislancerApp.png" alt="Freelancing Mobile App">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/billataWo/addislancers_app" target="_blank" class="project-link">
@@ -288,9 +318,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <!--<img src="https://via.placeholder.com/400x250/f093fb/ffffff?text=Portfolio+Website" alt="Portfolio Website">-->
-                       
-                        <img src="Images/PersonalPortifoilo.png" alt="Portfolio Website">
+                        <img src="Images/Portifoilo.png" alt="Portfolio Website">
                          <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link">
