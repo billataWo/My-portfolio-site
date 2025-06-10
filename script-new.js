@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize mobile menu
     initMobileMenu();
+    
+    // Initialize count-up animations
+    initCountUpAnimations();
 });
 
 function toggleTheme() {
@@ -158,6 +161,52 @@ function initMobileMenu() {
             }
         });
     }
+}
+
+// Count-up animation for statistics
+function initCountUpAnimations() {
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const countUpObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(statNumber => {
+                    if (!statNumber.classList.contains('animated')) {
+                        animateCountUp(statNumber);
+                        statNumber.classList.add('animated');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Observe the about stats section
+    const aboutStats = document.querySelector('.about-stats');
+    if (aboutStats) {
+        countUpObserver.observe(aboutStats);
+    }
+}
+
+function animateCountUp(element) {
+    const target = parseInt(element.dataset.target);
+    const suffix = element.dataset.suffix || '';
+    const duration = 1500; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        
+        element.textContent = Math.floor(current) + suffix;
+    }, 16);
 }
 
 // Smooth scrolling for navigation links
