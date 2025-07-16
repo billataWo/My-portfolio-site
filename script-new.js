@@ -1,5 +1,3 @@
-
-
 // Simple theme manager
 let currentTheme = 'light';
 
@@ -40,6 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize count-up animations
     initCountUpAnimations();
+
+    document.querySelectorAll('.floating-icons .icon').forEach(icon => {
+        icon.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.remove('clicked'); // reset if already animating
+            void this.offsetWidth; // force reflow to restart animation
+            this.classList.add('clicked');
+        });
+        icon.addEventListener('animationend', function() {
+            this.classList.remove('clicked');
+        });
+    });
 });
 
 function toggleTheme() {

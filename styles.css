@@ -198,8 +198,6 @@ body::before {
     border-bottom: 1px solid var(--border-color);
 }
 
-
-
 .nav-container {
     max-width: 1280px;
     margin: 0 auto;
@@ -279,8 +277,6 @@ body::before {
 .nav-link:hover::after {
     width: 100%;
 }
-
-
 
 .nav-controls {
     display: flex;
@@ -707,6 +703,7 @@ body::before {
     border-radius: 50%;
     background: var(--primary-600);
     transition: all 0.3s ease;
+    z-index: 2;
 }
 
 .image-container::before {
@@ -724,6 +721,11 @@ body::before {
     transform: scale(1.02);
 }
 
+.image-container:hover .floating-icons .icon {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
 .profile-img {
     width: 570px;
     height: 570px;
@@ -732,7 +734,7 @@ body::before {
     object-position: center;
     transition: all 0.3s ease;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.1),
         0 10px 20px rgba(0, 0, 0, 0.08);
@@ -744,6 +746,112 @@ body::before {
         0 30px 60px rgba(0, 0, 0, 0.15),
         0 15px 30px rgba(37, 99, 235, 0.1);
 }
+
+/* Floating tech icons behind profile image */
+.floating-icons {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.image-container:hover .floating-icons {
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.floating-icons .icon {
+    position: absolute;
+    font-size: 2.8rem;
+    opacity: 0.7;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+    will-change: transform;
+}
+
+.image-container:hover .floating-icons .icon {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* HTML Icon - swims in a large clockwise loop */
+.html-icon {
+    color: #e44d26;
+    left: 10%; top: 20%;
+    animation: swim-html 8s linear infinite;
+}
+@keyframes swim-html {
+    0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+    20%  { transform: translate(60px, -30px) scale(1.1) rotate(10deg); }
+    40%  { transform: translate(120px, 10px) scale(1.05) rotate(-8deg); }
+    60%  { transform: translate(80px, 60px) scale(0.95) rotate(8deg); }
+    80%  { transform: translate(10px, 40px) scale(1.08) rotate(-10deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+/* CSS Icon - swims in a counterclockwise ellipse */
+.css-icon {
+    color: #1572b6;
+    left: 70%; top: 65%;
+    animation: swim-css 10s linear infinite;
+}
+@keyframes swim-css {
+    0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25%  { transform: translate(-40px, -60px) scale(1.08) rotate(-12deg); }
+    50%  { transform: translate(-80px, 0px) scale(0.97) rotate(8deg); }
+    75%  { transform: translate(-40px, 50px) scale(1.1) rotate(-8deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+/* JS Icon - swims in a wavy up-and-down path */
+.js-icon {
+    color: #f7df1e;
+    left: 10%; top: 66%;
+    animation: swim-js 12s linear infinite;
+}
+@keyframes swim-js {
+    0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+    15%  { transform: translate(30px, 40px) scale(1.05) rotate(10deg); }
+    30%  { transform: translate(-10px, 80px) scale(0.95) rotate(-8deg); }
+    50%  { transform: translate(-40px, 40px) scale(1.1) rotate(8deg); }
+    70%  { transform: translate(10px, -30px) scale(1.08) rotate(-10deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+/* React Icon - swims in a circular path */
+.react-icon {
+    color: #61dafb;
+    left: 75%; top: 10%;
+    animation: swim-react 8s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes swim-react {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg);}
+    20%  { transform: translate(30px,20px) scale(1.1) rotate(10deg);}
+    40%  { transform: translate(40px,60px) scale(1.05) rotate(-8deg);}
+    60%  { transform: translate(10px,80px) scale(0.95) rotate(8deg);}
+    80%  { transform: translate(-20px,40px) scale(1.08) rotate(-10deg);}
+    100% { transform: translate(0,0) scale(1) rotate(0deg);}
+}
+
+/* Node.js Icon - swims in a diagonal path */
+.nodejs-icon {
+    color: #3c873a;
+    left: 20%; top: 60%;
+    animation: swim-nodejs 9s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes swim-nodejs {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg);}
+    25%  { transform: translate(20px,-20px) scale(1.08) rotate(-12deg);}
+    50%  { transform: translate(40px,0px) scale(0.97) rotate(8deg);}
+    75%  { transform: translate(20px,20px) scale(1.1) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1) rotate(0deg);}
+}
+
+/* Only animate icons on hover */
+.floating-icons .icon { animation-play-state: paused; }
+.image-container:hover .floating-icons .icon { animation-play-state: running; }
 
 /* Professional Section Styles - Optimized Spacing */
 section {
@@ -926,8 +1034,6 @@ section {
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
 }
-
-
 
 .skill-category:hover {
     transform: translateY(-3px);
@@ -1192,8 +1298,6 @@ section {
     position: relative;
     border: 1px solid var(--border-color);
 }
-
-
 
 .form-group {
     margin-bottom: 1.5rem;
@@ -1534,8 +1638,6 @@ section {
     transform: translateX(0);
 }
 
-
-
 /* Essential z-index management */
 .nav-container {
     position: relative;
@@ -1575,3 +1677,127 @@ section {
     }
 }
 
+.flutter-icon {
+    left: 70%; top: 50%;
+    animation: swim-flutter 7s linear infinite;
+    animation-play-state: paused;
+}
+.image-container:hover .flutter-icon {
+    animation-play-state: running;
+}
+@keyframes swim-flutter {
+    0%   { transform: translate(0,5) scale(1.2) rotate(0deg);}
+    20%  { transform: translate(20px,-10px) scale(1.1) rotate(8deg);}
+    40%  { transform: translate(50px,10px) scale(1.05) rotate(-6deg);}
+    60%  { transform: translate(20px,30px) scale(0.95) rotate(6deg);}
+    80%  { transform: translate(0,10px) scale(1.08) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1) rotate(0deg);}
+}
+
+.firebase-icon {
+    left: 75%; top: 25%;
+    animation: swim-firebase 9s linear infinite;
+    animation-play-state: paused;
+}
+.image-container:hover .firebase-icon { animation-play-state: running; }
+@keyframes swim-firebase {
+    0%   { transform: translate(0,0) scale(1.5) rotate(0deg);}
+    20%  { transform: translate(-20px,10px) scale(1.5) rotate(8deg);}
+    40%  { transform: translate(-40px,30px) scale(1.05) rotate(-6deg);}
+    60%  { transform: translate(-20px,50px) scale(1.5) rotate(6deg);}
+    80%  { transform: translate(0,20px) scale(1.08) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1.5) rotate(0deg);}
+}
+
+.dart-icon {
+    left: 20%; top: 50%;
+    animation: swim-dart 8s linear infinite;
+    animation-play-state: paused;
+}
+.image-container:hover .dart-icon { animation-play-state: running; }
+@keyframes swim-dart {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg);}
+    25%  { transform: translate(-40px,-10px) scale(1.68) rotate(-12deg);}
+    50%  { transform: translate(-40px,20px) scale(1.57) rotate(8deg);}
+    75%  { transform: translate(-20px,40px) scale(1.1) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1.2) rotate(0deg);}
+}
+
+.mysql-icon {
+    left: 15%; top: 40%;
+    animation: swim-mysql 10s linear infinite;
+    animation-play-state: paused;
+}
+.image-container:hover .mysql-icon { animation-play-state: running; }
+@keyframes swim-mysql {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg);}
+    20%  { transform: translate(30px,10px) scale(1.1) rotate(8deg);}
+    40%  { transform: translate(40px,40px) scale(1.05) rotate(-6deg);}
+    60%  { transform: translate(20px,60px) scale(0.95) rotate(6deg);}
+    80%  { transform: translate(0,20px) scale(1.08) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1) rotate(0deg);}
+}
+
+.apple-icon {
+    left: 80%; top: 60%;
+    animation: swim-apple 11s linear infinite;
+    animation-play-state: paused;
+}
+.image-container:hover .apple-icon { animation-play-state: running; }
+@keyframes swim-apple {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg);}
+    20%  { transform: translate(-30px,-20px) scale(1.1) rotate(8deg);}
+    40%  { transform: translate(-40px,10px) scale(1.05) rotate(-6deg);}
+    60%  { transform: translate(-20px,30px) scale(0.95) rotate(6deg);}
+    80%  { transform: translate(0,10px) scale(1.08) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1) rotate(0deg);}
+}
+
+.android-icon {
+    left: 60%; top: 50%;
+    animation: swim-android 9s linear infinite;
+    animation-play-state: paused;
+}
+.image-container:hover .android-icon { animation-play-state: running; }
+@keyframes swim-android {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg);}
+    20%  { transform: translate(20px,20px) scale(1.1) rotate(8deg);}
+    40%  { transform: translate(40px,40px) scale(1.05) rotate(-6deg);}
+    60%  { transform: translate(20px,60px) scale(0.95) rotate(6deg);}
+    80%  { transform: translate(0,20px) scale(1.08) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1) rotate(0deg);}
+}
+
+.floating-icons .icon img {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: block;
+    pointer-events: none;
+}
+
+.sql-icon {
+    left: 20%; top: 10%;
+    animation: swim-sql 8s linear infinite;
+    animation-play-state: paused;
+}
+.image-container:hover .sql-icon { animation-play-state: running; }
+@keyframes swim-sql {
+    0%   { transform: translate(0,0) scale(1) rotate(0deg);}
+    25%  { transform: translate(-40px,-10px) scale(0.78) rotate(-12deg);}
+    50%  { transform: translate(-40px,20px) scale(0.97) rotate(8deg);}
+    75%  { transform: translate(-20px,40px) scale(1.1) rotate(-8deg);}
+    100% { transform: translate(0,0) scale(1) rotate(0deg);}
+}
+
+/* Pop animation for icon click */
+@keyframes icon-pop {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.4) rotate(-10deg);}
+  50%  { transform: scale(0.9) rotate(10deg);}
+  70%  { transform: scale(1.2) rotate(-5deg);}
+  100% { transform: scale(1) rotate(0deg);}
+}
+
+.floating-icons .icon.clicked {
+  animation: icon-pop 0.5s cubic-bezier(0.4,0,0.2,1);
+}
